@@ -1,0 +1,27 @@
+{% extends 'musicbytes/basic.html'%}
+{% block title%}All Songs{%endblock%}
+
+{% block body%}
+<div class="container">
+{% for i in song %}
+<div class="card mb-3" style="max-width: 940px; padding-top:1%; box-shadow: 0 0px 20px 0 rgba(0,0,0,0.2);background-color: rgba(0,0,0,0.2);">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="/media/{{i.image}}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title" style= "color:rgb(255, 0, 0);font-family: 'Monoton', cursive;">{{i.name}}</h5>
+          <p class="card-text" style="color:rgb(210, 4, 45); padding-top:3%">{{i.tags}}</p>
+          <div  style="padding-top:6%">
+          <a href="/musicbytes/songs/{{i.song_id}}"><button class="btn btn-outline-danger" >Sound Trip</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {%endfor%}
+</div>
+
+
+{%endblock%}
